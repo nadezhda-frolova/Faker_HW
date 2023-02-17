@@ -5,22 +5,23 @@ import org.junit.jupiter.api.Test;
 
 public class FillUserDataTest extends TestBase {
     Faker faker = new Faker();
+    String userName = faker.name().firstName(),
+            userSurname = faker.name().lastName(),
+            userEmail = faker.internet().emailAddress(),
+            userGender = "Female",
+            userPhone = faker.phoneNumber().subscriberNumber(10),
+            userBirthday = "04",
+            userBirthMonth = "November",
+            userBirthYear = "1984",
+            subject = "Maths",
+            hobbies = "Sports",
+            picture = "frog.jpg",
+            currentAddress = faker.address().fullAddress(),
+            state = "NCR",
+            city = "Delhi";
     @Test
     void successfulFillUserDataTest() {
-        String userName = faker.name().firstName(),
-                userSurname = faker.name().lastName(),
-                userEmail = faker.internet().emailAddress(),
-                userGender = "Female",
-                userPhone = faker.phoneNumber().subscriberNumber(10),
-                userBirthday = "04",
-                userBirthMonth = "November",
-                userBirthYear = "1984",
-                subject = "Maths",
-                hobbies = "Sports",
-                picture = "frog.jpg",
-                currentAddress = faker.address().fullAddress(),
-                state = "NCR",
-                city = "Delhi";
+
 
         registrationPage.openPage()
                 .setFirstName(userName)
